@@ -1,0 +1,44 @@
+{
+  "protocol_id": "corit_v3_1_euclid",
+  "frozen_code_config_sha256": "02815152ccbca41bd83be8e2a4deb5df04f31629578ed7ac617c44e9e76f8616",
+  "selection_stage": "Synthetic-anomaly development stage only (zero test-set access)",
+  "seeds": [42, 43, 44, 45, 46],
+  "input_resolution": 320,
+  "split": {
+    "normal_bank_fraction": 0.80,
+    "normal_calibration_fraction": 0.20,
+    "group_aware_insplad": true
+  },
+  "selected_model": {
+    "representation": "v2_euclidean",
+    "view_dim": 128,
+    "k_nn": 1,
+    "pooling": "max",
+    "alpha": 0.5,
+    "conflict_mode": "img_plus",
+    "lambda": 0.2,
+    "coreset_ratio": 0.01,
+    "coreset_max_tokens": 4096
+  },
+  "truncated_backbones": {
+    "wide_resnet50_2": {"active_params_M": 24.86, "full_params_M": 68.88, "gflops": 39.76},
+    "resnet34": {"active_params_M": 8.17, "full_params_M": 21.80, "gflops": 14.13},
+    "resnet18": {"active_params_M": 2.78, "full_params_M": 11.69, "gflops": 7.52},
+    "mobilenet_v3_large": {"active_params_M": 0.79, "full_params_M": 5.48, "gflops": 2.22}
+  },
+  "escalation_and_a2g": {
+    "risk_quantile": 0.95,
+    "conflict_quantile": 0.90,
+    "uav_altitude_m": 15.0,
+    "horizontal_radius_m": [8.0, 60.0],
+    "al_hourani_a": 9.61,
+    "al_hourani_b": 0.16,
+    "eta_los_db": 1.0,
+    "eta_nlos_db": 20.0,
+    "acquisition_fps": 5.0,
+    "airtime_duty_cycle": 0.50,
+    "lyapunov_V": 6.0,
+    "review_budgets": [0.15, 0.25, 0.35],
+    "nominal_bw_mbps": [1.0, 5.0, 10.0, 20.0, 50.0]
+  }
+}
